@@ -1,4 +1,1 @@
-chatterbot==1.0.5
-chatterbot-corpus
 django
-sqlalchemy==1.3.24
