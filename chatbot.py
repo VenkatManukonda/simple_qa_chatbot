@@ -1,5 +1,14 @@
 # Simple Q&A Chatbot
-# This chatbot runs in the terminal and responds to basic greetings and questions.
+# This chatbot runs in the terminal and responds to common greetings and questions.
+
+responses = {
+    "hello": "Hello there!",
+    "hi": "Hi! How are you?",
+    "good morning": "Good morning! How are you doing today?",
+    "how are you": "I am doing very well, thank you for asking.",
+    "your name": "I am a simple Python chatbot created for an AI assignment.",
+    "bye": "Goodbye! Have a nice day."
+}
 
 def chatbot():
     print("Bot: Hello! Type 'exit' to end the chat.\n")
@@ -11,21 +20,16 @@ def chatbot():
             print("Bot: Goodbye!")
             break
 
-        elif "hello" in user_input or "hi" in user_input:
-            print("Bot: Hello there!")
+        # Check if user input matches a key in responses
+        matched = False
+        for key in responses:
+            if key in user_input:
+                print("Bot:", responses[key])
+                matched = True
+                break
 
-        elif "good morning" in user_input:
-            print("Bot: Good morning! How are you doing today?")
-
-        elif "how are you" in user_input:
-            print("Bot: I am doing very well, thank you for asking.")
-
-        elif "your name" in user_input:
-            print("Bot: I am a simple Python chatbot created for an AI assignment.")
-
-        else:
+        if not matched:
             print("Bot: That's interesting! Tell me more.")
-
 
 if __name__ == "__main__":
     chatbot()
